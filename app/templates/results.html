@@ -49,8 +49,9 @@ body {
   <script>
     var sebarray = [];
     sebarray.push("start");
-    function sebFunction(input) {
-	console.log(input);
+    function sebFunction(img_src) {
+	console.log(img_src);
+	$.post( "reverse", { img_link: img_src } )
     };
     $.ajax({
       url: "https://igpi.ga/{{ username }}/media",
@@ -69,7 +70,7 @@ body {
         }
 	
 	$.each(sebarray, function(index, value) {
-                $(value).attr('onClick', "sebFunction('" + index + "')");
+                $(value).attr('onClick', "sebFunction('" + value.src + "')");
         });
       }
     });

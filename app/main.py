@@ -21,9 +21,10 @@ def results():
 
 @app.route('/reverse', methods = ['GET', 'POST'])
 def reverse():
-        an_img_link = request.args.get('img_link')
+        an_img_link = request.form.get('img_link', '')
+	print an_img_link
 
-        return "hello" + an_img_link
+        return an_img_link
 
 if __name__ == "__main__":
         app.run(debug=True)
