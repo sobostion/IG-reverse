@@ -44,38 +44,11 @@ body {
 </head>
 <body>
 
+<h1> link is {{ img_link }} </h1>
+
 <div class="grid-container">
 <script data-require="jquery@3.0.0" data-semver="3.0.0" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0/jquery.js"></script>
-<script src="static/jquery.redirect.js"></script>
   <script>
-    var sebarray = [];
-
-    function sebFunction(img_src) {
-	console.log(img_src);
-	$.redirect( "reverse", { img_link: img_src } )
-    };
-
-    $.ajax({
-      url: "https://igpi.ga/{{ username }}/media",
-      dataType: "jsonp",
-      data: {
-        count: 24
-      },
-      success: function(json) {
-        for (var i in json.posts) {
-          var img = document.createElement("IMG");
-
-          img.src = json.posts[i].display_url;
-	  sebarray.push(img);
-          document.body.appendChild(img);
-        }
-	
-	$.each(sebarray, function(index, value) {
-                $(value).attr('onClick', "sebFunction('" + value.src + "')");
-        });
-      }
-    });
-    
   </script>
 </div>
 

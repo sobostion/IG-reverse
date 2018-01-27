@@ -17,7 +17,7 @@ img {
 }
 
 body {
-    font-family: $font-family;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-size: $font-size;
     background-size: 200% 100% !important;
     animation: move 10s ease infinite;
@@ -41,6 +41,14 @@ body {
 
 .user__title {
     font-size: $font-size;
+    margin-bottom: -10px;
+    font-weight: 500;
+    color: white;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+
+.user__subtitle {
+    font-size: 12px;
     margin-bottom: -10px;
     font-weight: 500;
     color: white;
